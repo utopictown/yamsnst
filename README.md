@@ -1,5 +1,5 @@
 # yamsnst
-microservices with nestjs (basic CRUD service implementation with notifier websocket service)
+microservices with nestjs (basic CRUD service implementation with notifier websocket service with mongodb as main db and mysql backup db)
 
 ### how to run
  1. copy .env.example to .env `cp .env.example .env`
