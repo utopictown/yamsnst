@@ -6,7 +6,7 @@ import { UpdateItemDto } from './dto/update-item.dto';
 import { Item as ItemBackup } from './entities/item.entity';
 import { InjectModel } from '@nestjs/mongoose';
 import { Item, ItemDocument } from './schemas/item.schema';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 
 @Injectable()
 export class AppService {
@@ -36,7 +36,7 @@ export class AppService {
   }
 
   async findOne(id: string) {
-    return await this.itemModel.findOne({ id });
+    return await this.itemModel.findById(new Types.ObjectId(id));
   }
 
   async update(id: string, updateProductDto: UpdateItemDto) {

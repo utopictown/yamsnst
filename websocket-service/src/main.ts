@@ -9,7 +9,7 @@ async function bootstrap() {
     WebsocketModule,
     {
       transport: Transport.TCP,
-      options: { host: '0.0.0.0', port: Number(port) },
+      options: { host: process.env.WEBSOCKET_SERVICE_HOST, port: Number(port) },
     },
   );
   app.listen();
